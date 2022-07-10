@@ -1,0 +1,15 @@
+cd $PREFIX
+ARCH=$(uname -m)
+if [ $ARCH = aarch64 ]; then
+curl -O https://thercn.github.io/config/pacman-6.0.1-$ARCH.tar.gz
+tar xf pacman-6.0.1-$ARCH.tar.gz
+rm pacman-6.0.1-$ARCH.tar.gz
+pacman -Sy
+echo Done!
+elif [ $ARCH = armv8l ]; then 
+curl -O https://thercn.github.io/config/pacman-6.0.1-$ARCH.tar.gz
+tar xf pacman-6.0.1-$ARCH.tar.gz
+rm pacman-6.0.1-$ARCH.tar.gz
+echo Done!
+echo 如果您的手机系统是64位的，但是pacman无法正常运行，请将MT管理器更新到2.10.0版本以上，然后再重新执行curl https://thercn.github.io/config/config-pacman|bash即可解决
+fi
